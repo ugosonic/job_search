@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags for Responsive Design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobSeeker - Find Your Dream Job</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Background Gradient */
+        body {
+            background: linear-gradient(135deg, #dbd7df 0%, #d8e2ee 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Styling */
+        .navbar {
+            background-color: transparent;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f1ecec;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url('./images/jobseeker.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 5px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .feature {
+            margin-bottom: 30px;
+        }
+
+        .feature img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        .feature h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 20px;
+            }
+
+            .hero-content .btn {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="../job search/images/jobseeker.png" alt="JobSeeker Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>    
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../job search/pages/home_allusers.php">Find Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../job search/pages/home_employers.php">Post a Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary" href="login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-white" href="register.php">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Find Your Dream Job Today</h1>
+            <p>Connecting job seekers with top companies worldwide</p>
+            <a href="../job search/register.php" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Why Choose JobSeeker</h2>
+            <div class="row">
+                <div class="col-md-4 feature">
+                    <img src="./images/physics.png" alt="Feature 1">
+                    <h4>Extensive Job Listings</h4>
+                    <p>Access thousands of job listings from top companies across the globe.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <img src="./images/search.png" alt="Feature 2">
+                    <h4>User-Friendly Platform</h4>
+                    <p>Easy-to-use platform that simplifies your job search experience.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <img src="./images/promotion.png" alt="Feature 3">
+                    <h4>Career Resources</h4>
+                    <p>Get access to valuable resources to boost your career growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; <?= date("Y"); ?> JobSeeker. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </p>
+            <p>Follow us on:
+                <a href="#"><img src="./images/facebook.png" width="20" height="20" alt="Facebook"></a>
+                <a href="#"><img src="./images/twitter.png" width="20" height="20" alt="Twitter"></a>
+                <a href="#"><img src="./images/linkedin.png" width="20" height="20" alt="LinkedIn"></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Dependencies (jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha384-DfXdzyPjeY2tMWV5ygIKW2Yq9mqznCC00PQ7dQoSTZItz/9q6paVSJtdJzxssMjc" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+            integrity="sha384-3mPhkqsLzptDrHkc+h1Gm/g6QxghXqtDsqh00KZRJ++mHdcoR2m+5dZ2ctnpERmJ" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+            integrity="sha384-S5nLAH8rgaOYr1G77EOYV0mTjup39nClY4jV/9ZsQEMxATj8Fz3hG5tGJSkH8zYQ" 
+            crossorigin="anonymous"></script>
+</body>
+</html>

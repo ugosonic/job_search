@@ -1,0 +1,68 @@
+/* Scoped styling for the specific navigation bar */
+.navtop {
+    background-color: #333; /* Dark background for the navigation bar */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Padding to add space inside the nav */
+}
+
+.navtop div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styling for the title "Job Seeker" */
+.navtop h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* Container for links */
+.navtop a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px; /* Space between links */
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Align Job Seeker to the far left and links to the far right */
+.navtop div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Container for the links to be on the far right */
+.navtop div a {
+    margin-left: auto; /* Push links to the far right */
+}
+
+.navtop div a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navtop div {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navtop a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .navtop h2 {
+        margin-bottom: 10px; /* Add space between the title and links */
+    }
+}

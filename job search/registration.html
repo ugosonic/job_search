@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+          const errorMessageElement = document.getElementById('error-message');
+          errorMessageElement.textContent = ''; // clear error message on load
+          const urlParams = new URLSearchParams(window.location.search);
+          const error = urlParams.get('error');
+        if (error) {
+            const errorMessageElement = document.getElementById('error-message');
+            const errorMessage = {
+                username: 'Username already exists!',
+                email: 'Email already exists!',
+                missingfields: 'Please fill all the fields!',
+                sql: 'Username or Email already exists.'
+            };
+            errorMessageElement.textContent = errorMessage[error] || 'An unknown error occurred.';
+            errorMessageElement.style.display = 'block';
+        }
+    });
+    </script>
+      <style>
+        .error-message {
+          display: none;
+        }
+      </style>
+
+</head>
+<body>
+    <nav class="navtop">
+        <div>
+            <h1>Job Seeker</h1>
+            <a href="login.php"><i class="fas fa-user-circle"></i>Login</a>
+        </div>
+    </nav>
+    <div class="login">
+        <h1>Register</h1>
+        <div id="error-message" class="alert alert-danger alert-dismissible error-message">
+            <a href="#" class="error-message" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error:</strong> <span id="alert">Username or Email already exists.</span>
+        </div>
+        <form action="register.php" method="post">
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+              </svg>
+            <select name="usergroup" id="usergroup" required>
+                <option value="allusers">All Users</option>
+                <option value="employers">Employers</option>
+            </select>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
